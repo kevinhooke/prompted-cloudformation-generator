@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Resources: 
+  {{tableResourceName}}: 
+    Type: AWS::DynamoDB::Table
+    Properties: 
+      AttributeDefinitions: 
+        - 
+          AttributeName: "{{hashKeyName}}"
+          AttributeType: "{{hashKeyType}}"
+        - 
+          AttributeName: "{{rangeKeyName}}"
+          AttributeType: "{{rangeKeyType}}"
+      KeySchema: 
+        - 
+          AttributeName: "{{hashKeyName}}"
+          KeyType: "HASH"
+        - 
+          AttributeName: "{{rangeKeyName}}"
+          KeyType: "RANGE"
+      ProvisionedThroughput: 
+        ReadCapacityUnits: "{{readCapacity}}"
+        WriteCapacityUnits: "{{writeCapacity}}"
+      TableName: "{{tableName}}"

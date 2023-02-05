@@ -1,0 +1,34 @@
+[
+    {
+        "variableName": "tableName",
+        "variableType": "string"
+    },
+    {
+        "variableName": "tableResourceName",
+        "variableType": "string"
+    },
+    {
+        "variableName": "hashKeyName",
+        "variableType": "string"
+    },
+    {
+        "variableName": "hashKeyType",
+        "variableType": "string"
+    },
+    {
+        "variableName": "rangeKeyName",
+        "variableType": "string"
+    },
+    {
+        "variableName": "rangeKeyType",
+        "variableType": "string"
+    },
+    {
+        "variableName": "readCapacity",
+        "variableType": "number"
+    },
+    {
+        "variableName": "writeCapacity",
+        "variableType": "number"
+    }   
+]
