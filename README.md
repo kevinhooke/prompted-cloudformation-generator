@@ -12,67 +12,67 @@ Each AWS resource type requires a pair of template files:
 
 dynamodb.template
 
-AWSTemplateFormatVersion: "2010-09-09"
-Resources: 
-  {{tableResourceName}}: 
-    Type: AWS::DynamoDB::Table
-    Properties: 
-      AttributeDefinitions: 
-        - 
-          AttributeName: "{{hashKeyName}}"
-          AttributeType: "{{hashKeyType}}"
-        - 
-          AttributeName: "{{rangeKeyName}}"
-          AttributeType: "{{rangeKeyType}}"
-      KeySchema: 
-        - 
-          AttributeName: "{{hashKeyName}}"
-          KeyType: "HASH"
-        - 
-          AttributeName: "{{rangeKeyName}}"
-          KeyType: "RANGE"
-      ProvisionedThroughput: 
-        ReadCapacityUnits: "{{readCapacity}}"
-        WriteCapacityUnits: "{{writeCapacity}}"
-      TableName: "{{tableName}}"
+  AWSTemplateFormatVersion: "2010-09-09"
+  Resources: 
+    {{tableResourceName}}: 
+      Type: AWS::DynamoDB::Table
+      Properties: 
+        AttributeDefinitions: 
+          - 
+            AttributeName: "{{hashKeyName}}"
+            AttributeType: "{{hashKeyType}}"
+          - 
+            AttributeName: "{{rangeKeyName}}"
+            AttributeType: "{{rangeKeyType}}"
+        KeySchema: 
+          - 
+            AttributeName: "{{hashKeyName}}"
+            KeyType: "HASH"
+          - 
+            AttributeName: "{{rangeKeyName}}"
+            KeyType: "RANGE"
+        ProvisionedThroughput: 
+          ReadCapacityUnits: "{{readCapacity}}"
+          WriteCapacityUnits: "{{writeCapacity}}"
+        TableName: "{{tableName}}"
 
 
 dynamodb.template.prompts.json
 
-[
-    {
-        "variableName": "tableName",
-        "variableType": "string"
-    },
-    {
-        "variableName": "tableResourceName",
-        "variableType": "string"
-    },
-    {
-        "variableName": "hashKeyName",
-        "variableType": "string"
-    },
-    {
-        "variableName": "hashKeyType",
-        "variableType": "string"
-    },
-    {
-        "variableName": "rangeKeyName",
-        "variableType": "string"
-    },
-    {
-        "variableName": "rangeKeyType",
-        "variableType": "string"
-    },
-    {
-        "variableName": "readCapacity",
-        "variableType": "number"
-    },
-    {
-        "variableName": "writeCapacity",
-        "variableType": "number"
-    }   
-]
+  [
+      {
+          "variableName": "tableName",
+          "variableType": "string"
+      },
+      {
+          "variableName": "tableResourceName",
+          "variableType": "string"
+      },
+      {
+          "variableName": "hashKeyName",
+          "variableType": "string"
+      },
+      {
+          "variableName": "hashKeyType",
+          "variableType": "string"
+      },
+      {
+          "variableName": "rangeKeyName",
+          "variableType": "string"
+      },
+      {
+          "variableName": "rangeKeyType",
+          "variableType": "string"
+      },
+      {
+          "variableName": "readCapacity",
+          "variableType": "number"
+      },
+      {
+          "variableName": "writeCapacity",
+          "variableType": "number"
+      }   
+  ]
 
 # Current Limitations / Future Enhancements
 
