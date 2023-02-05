@@ -8,7 +8,7 @@ Each AWS resource type requires a pair of template files:
 - [resource-name].template : this is a handlebars style template for the CloudFormation file to be generated
 - [resource-name].template.prompts.json : this is a JSON file containing an array of parameters that the user will be prompted to enter
 
-## DyanmoDB example
+## DynamoDB example
 
 dynamodb.template
 
