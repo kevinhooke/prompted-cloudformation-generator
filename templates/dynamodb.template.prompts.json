@@ -1,34 +1,68 @@
 [
     {
+        "required": true,
         "variableName": "tableName",
         "variableType": "string"
     },
     {
+        "required": true,
         "variableName": "tableResourceName",
         "variableType": "string"
     },
     {
+        "required": true,
         "variableName": "hashKeyName",
         "variableType": "string"
     },
     {
+        "required": true,
         "variableName": "hashKeyType",
         "variableType": "string"
     },
     {
+        "required": true,
         "variableName": "rangeKeyName",
         "variableType": "string"
     },
     {
+        "required": true,
         "variableName": "rangeKeyType",
         "variableType": "string"
     },
     {
+        "required": true,
         "variableName": "readCapacity",
         "variableType": "number"
     },
     {
+        "required": true,
         "variableName": "writeCapacity",
         "variableType": "number"
-    }   
+    },
+    {
+        "required": false,
+        "variableName": "GlobalSecondaryIndexes",
+        "parameters": [
+            {
+                "variableName": "gsiName",
+                "variableType": "string"
+            },
+            {
+                "variableName": "gsiHashName",
+                "variableType": "string"
+            },
+            {
+                "variableName": "gsiHashType",
+                "variableType": "string"
+            },
+            {
+                "variableName": "gsiRangeName",
+                "variableType": "string"
+            },
+            {
+                "variableName": "gsiRangeType",
+                "variableType": "string"
+            }
+        ]
+    }
 ]

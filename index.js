@@ -9,8 +9,19 @@ let templateParameters = require(`./templates/${templateFilename}.template.promp
 let parameterValues = {};
 
 templateParameters.forEach(parameter => {
-    let response = prompt(`Enter value for ${parameter.variableName}: `);
-    parameterValues[parameter.variableName] = response;
+    if(parameter.required){
+        let response = prompt(`Enter value for ${parameter.variableName}: `);
+        parameterValues[parameter.variableName] = response;
+    }
+    else{
+        let optionalAttribute = prompt(`Enter Y to include ${parameter.variableName}: `);
+        if(optionalAttribute.toUpperCase() === 'Y'){
+            parameter.parameters.forEach(optionalParameter => {
+                let optionalResponse = prompt(`Enter value for ${optionalParameter.variableName}: `);
+                parameterValues[optionalParameter.variableName] = optionalResponse;
+            });
+        }
+    }
 });
 
 console.log(`${JSON.stringify(parameterValues)}`);

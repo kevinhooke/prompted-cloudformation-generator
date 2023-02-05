@@ -10,6 +10,14 @@ Resources:
         - 
           AttributeName: "{{rangeKeyName}}"
           AttributeType: "{{rangeKeyType}}"
+        {{#if gsiName}}
+        - 
+          AttributeName: "{{gsiHashName}}"
+          AttributeType: "{{gsiHashType}}"
+        - 
+          AttributeName: "{{gsiRangeName}}"
+          AttributeType: "{{gsiRangeType}}"
+        {{/if}}
       KeySchema: 
         - 
           AttributeName: "{{hashKeyName}}"
@@ -21,3 +29,17 @@ Resources:
         ReadCapacityUnits: "{{readCapacity}}"
         WriteCapacityUnits: "{{writeCapacity}}"
       TableName: "{{tableName}}"
+      {{#if gsiName}}
+      GlobalSecondaryIndexes: 
+        - 
+          IndexName: "{{gsiName}}"
+          KeySchema: 
+            - 
+              AttributeName: "{{gsiHashName}}"
+              KeyType: "HASH"
+            - 
+              AttributeName: "{{gsiRangeName}}"
+              KeyType: "RANGE"
+          Projection: 
+            ProjectionType: "INCLUDE_ALL"
+      {{/if}}
